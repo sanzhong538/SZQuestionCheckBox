@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		524B25EE1CF6D5BE00D0D49F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B25ED1CF6D5BE00D0D49F /* main.m */; };
+		524B25F11CF6D5BE00D0D49F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B25F01CF6D5BE00D0D49F /* AppDelegate.m */; };
+		524B25F71CF6D5BE00D0D49F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524B25F51CF6D5BE00D0D49F /* Main.storyboard */; };
+		524B25F91CF6D5BE00D0D49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 524B25F81CF6D5BE00D0D49F /* Assets.xcassets */; };
+		524B25FC1CF6D5BE00D0D49F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 524B25FA1CF6D5BE00D0D49F /* LaunchScreen.storyboard */; };
+		524B26071CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B26061CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.m */; };
+		524B26121CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B26111CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.m */; };
+		524B263C1CF6D65700D0D49F /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 524B26321CF6D65700D0D49F /* checked.png */; };
+		524B263D1CF6D65700D0D49F /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 524B26331CF6D65700D0D49F /* unchecked.png */; };
+		524B263E1CF6D65700D0D49F /* SZConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B26351CF6D65700D0D49F /* SZConfigure.m */; };
+		524B263F1CF6D65700D0D49F /* SZQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B26371CF6D65700D0D49F /* SZQuestionCell.m */; };
+		524B26401CF6D65700D0D49F /* SZQuestionCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B26391CF6D65700D0D49F /* SZQuestionCheckBox.m */; };
+		524B26411CF6D65700D0D49F /* SZQuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B263B1CF6D65700D0D49F /* SZQuestionItem.m */; };
+		526176DF1CF7D72F00DF9DA4 /* SetFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526176DE1CF7D72F00DF9DA4 /* SetFrameViewController.m */; };
+		528039851CF6DB3C008BD16C /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528039841CF6DB3C008BD16C /* DefaultViewController.m */; };
+		528039881CF6E858008BD16C /* DIYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528039871CF6E858008BD16C /* DIYViewController.m */; };
+		5280398B1CF6ED7D008BD16C /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5280398A1CF6ED7D008BD16C /* ShowViewController.m */; };
+		5280398E1CF6F8CA008BD16C /* dx_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280398C1CF6F8CA008BD16C /* dx_h@2x.png */; };
+		5280398F1CF6F8CA008BD16C /* dx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280398D1CF6F8CA008BD16C /* dx@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		524B26031CF6D5BE00D0D49F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524B25E11CF6D5BE00D0D49F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 524B25E81CF6D5BE00D0D49F;
+			remoteInfo = SZQuestionCheckBox_demo;
+		};
+		524B260E1CF6D5BE00D0D49F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524B25E11CF6D5BE00D0D49F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 524B25E81CF6D5BE00D0D49F;
+			remoteInfo = SZQuestionCheckBox_demo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		524B25E91CF6D5BE00D0D49F /* SZQuestionCheckBox_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SZQuestionCheckBox_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		524B25ED1CF6D5BE00D0D49F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		524B25EF1CF6D5BE00D0D49F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		524B25F01CF6D5BE00D0D49F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		524B25F61CF6D5BE00D0D49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		524B25F81CF6D5BE00D0D49F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		524B25FB1CF6D5BE00D0D49F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		524B25FD1CF6D5BE00D0D49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524B26021CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SZQuestionCheckBox_demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		524B26061CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZQuestionCheckBox_demoTests.m; sourceTree = "<group>"; };
+		524B26081CF6D5BE00D0D49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524B260D1CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SZQuestionCheckBox_demoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		524B26111CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZQuestionCheckBox_demoUITests.m; sourceTree = "<group>"; };
+		524B26131CF6D5BE00D0D49F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524B26321CF6D65700D0D49F /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		524B26331CF6D65700D0D49F /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		524B26341CF6D65700D0D49F /* SZConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZConfigure.h; sourceTree = "<group>"; };
+		524B26351CF6D65700D0D49F /* SZConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZConfigure.m; sourceTree = "<group>"; };
+		524B26361CF6D65700D0D49F /* SZQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQuestionCell.h; sourceTree = "<group>"; };
+		524B26371CF6D65700D0D49F /* SZQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQuestionCell.m; sourceTree = "<group>"; };
+		524B26381CF6D65700D0D49F /* SZQuestionCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQuestionCheckBox.h; sourceTree = "<group>"; };
+		524B26391CF6D65700D0D49F /* SZQuestionCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQuestionCheckBox.m; sourceTree = "<group>"; };
+		524B263A1CF6D65700D0D49F /* SZQuestionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQuestionItem.h; sourceTree = "<group>"; };
+		524B263B1CF6D65700D0D49F /* SZQuestionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQuestionItem.m; sourceTree = "<group>"; };
+		526176DD1CF7D72F00DF9DA4 /* SetFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetFrameViewController.h; sourceTree = "<group>"; };
+		526176DE1CF7D72F00DF9DA4 /* SetFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetFrameViewController.m; sourceTree = "<group>"; };
+		528039831CF6DB3C008BD16C /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
+		528039841CF6DB3C008BD16C /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
+		528039861CF6E858008BD16C /* DIYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYViewController.h; sourceTree = "<group>"; };
+		528039871CF6E858008BD16C /* DIYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYViewController.m; sourceTree = "<group>"; };
+		528039891CF6ED7D008BD16C /* ShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowViewController.h; sourceTree = "<group>"; };
+		5280398A1CF6ED7D008BD16C /* ShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowViewController.m; sourceTree = "<group>"; };
+		5280398C1CF6F8CA008BD16C /* dx_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dx_h@2x.png"; sourceTree = "<group>"; };
+		5280398D1CF6F8CA008BD16C /* dx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dx@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		524B25E61CF6D5BE00D0D49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B25FF1CF6D5BE00D0D49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B260A1CF6D5BE00D0D49F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		524B25E01CF6D5BD00D0D49F = {
+			isa = PBXGroup;
+			children = (
+				524B25EB1CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */,
+				524B26051CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests */,
+				524B26101CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests */,
+				524B25EA1CF6D5BE00D0D49F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		524B25EA1CF6D5BE00D0D49F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				524B25E91CF6D5BE00D0D49F /* SZQuestionCheckBox_demo.app */,
+				524B26021CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.xctest */,
+				524B260D1CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		524B25EB1CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */ = {
+			isa = PBXGroup;
+			children = (
+				524B26301CF6D65700D0D49F /* SZQuestionCheckBox */,
+				524B25EF1CF6D5BE00D0D49F /* AppDelegate.h */,
+				524B25F01CF6D5BE00D0D49F /* AppDelegate.m */,
+				526176E11CF7D79400DF9DA4 /* Controller */,
+				526176E01CF7D75E00DF9DA4 /* Sourece */,
+				524B25F51CF6D5BE00D0D49F /* Main.storyboard */,
+				524B25F81CF6D5BE00D0D49F /* Assets.xcassets */,
+				524B25FA1CF6D5BE00D0D49F /* LaunchScreen.storyboard */,
+				524B25FD1CF6D5BE00D0D49F /* Info.plist */,
+				524B25EC1CF6D5BE00D0D49F /* Supporting Files */,
+			);
+			path = SZQuestionCheckBox_demo;
+			sourceTree = "<group>";
+		};
+		524B25EC1CF6D5BE00D0D49F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				524B25ED1CF6D5BE00D0D49F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		524B26051CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				524B26061CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.m */,
+				524B26081CF6D5BE00D0D49F /* Info.plist */,
+			);
+			path = SZQuestionCheckBox_demoTests;
+			sourceTree = "<group>";
+		};
+		524B26101CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				524B26111CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.m */,
+				524B26131CF6D5BE00D0D49F /* Info.plist */,
+			);
+			path = SZQuestionCheckBox_demoUITests;
+			sourceTree = "<group>";
+		};
+		524B26301CF6D65700D0D49F /* SZQuestionCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				524B26311CF6D65700D0D49F /* resource */,
+				524B26341CF6D65700D0D49F /* SZConfigure.h */,
+				524B26351CF6D65700D0D49F /* SZConfigure.m */,
+				524B26361CF6D65700D0D49F /* SZQuestionCell.h */,
+				524B26371CF6D65700D0D49F /* SZQuestionCell.m */,
+				524B26381CF6D65700D0D49F /* SZQuestionCheckBox.h */,
+				524B26391CF6D65700D0D49F /* SZQuestionCheckBox.m */,
+				524B263A1CF6D65700D0D49F /* SZQuestionItem.h */,
+				524B263B1CF6D65700D0D49F /* SZQuestionItem.m */,
+			);
+			path = SZQuestionCheckBox;
+			sourceTree = "<group>";
+		};
+		524B26311CF6D65700D0D49F /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				524B26321CF6D65700D0D49F /* checked.png */,
+				524B26331CF6D65700D0D49F /* unchecked.png */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		526176E01CF7D75E00DF9DA4 /* Sourece */ = {
+			isa = PBXGroup;
+			children = (
+				5280398C1CF6F8CA008BD16C /* dx_h@2x.png */,
+				5280398D1CF6F8CA008BD16C /* dx@2x.png */,
+			);
+			name = Sourece;
+			sourceTree = "<group>";
+		};
+		526176E11CF7D79400DF9DA4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				528039831CF6DB3C008BD16C /* DefaultViewController.h */,
+				528039841CF6DB3C008BD16C /* DefaultViewController.m */,
+				528039861CF6E858008BD16C /* DIYViewController.h */,
+				528039871CF6E858008BD16C /* DIYViewController.m */,
+				528039891CF6ED7D008BD16C /* ShowViewController.h */,
+				5280398A1CF6ED7D008BD16C /* ShowViewController.m */,
+				526176DD1CF7D72F00DF9DA4 /* SetFrameViewController.h */,
+				526176DE1CF7D72F00DF9DA4 /* SetFrameViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		524B25E81CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 524B26161CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demo" */;
+			buildPhases = (
+				524B25E51CF6D5BE00D0D49F /* Sources */,
+				524B25E61CF6D5BE00D0D49F /* Frameworks */,
+				524B25E71CF6D5BE00D0D49F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SZQuestionCheckBox_demo;
+			productName = SZQuestionCheckBox_demo;
+			productReference = 524B25E91CF6D5BE00D0D49F /* SZQuestionCheckBox_demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		524B26011CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 524B26191CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demoTests" */;
+			buildPhases = (
+				524B25FE1CF6D5BE00D0D49F /* Sources */,
+				524B25FF1CF6D5BE00D0D49F /* Frameworks */,
+				524B26001CF6D5BE00D0D49F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				524B26041CF6D5BE00D0D49F /* PBXTargetDependency */,
+			);
+			name = SZQuestionCheckBox_demoTests;
+			productName = SZQuestionCheckBox_demoTests;
+			productReference = 524B26021CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		524B260C1CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 524B261C1CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demoUITests" */;
+			buildPhases = (
+				524B26091CF6D5BE00D0D49F /* Sources */,
+				524B260A1CF6D5BE00D0D49F /* Frameworks */,
+				524B260B1CF6D5BE00D0D49F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				524B260F1CF6D5BE00D0D49F /* PBXTargetDependency */,
+			);
+			name = SZQuestionCheckBox_demoUITests;
+			productName = SZQuestionCheckBox_demoUITests;
+			productReference = 524B260D1CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		524B25E11CF6D5BE00D0D49F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "吴三忠";
+				TargetAttributes = {
+					524B25E81CF6D5BE00D0D49F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					524B26011CF6D5BE00D0D49F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 524B25E81CF6D5BE00D0D49F;
+					};
+					524B260C1CF6D5BE00D0D49F = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 524B25E81CF6D5BE00D0D49F;
+					};
+				};
+			};
+			buildConfigurationList = 524B25E41CF6D5BE00D0D49F /* Build configuration list for PBXProject "SZQuestionCheckBox_demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 524B25E01CF6D5BD00D0D49F;
+			productRefGroup = 524B25EA1CF6D5BE00D0D49F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				524B25E81CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */,
+				524B26011CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests */,
+				524B260C1CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		524B25E71CF6D5BE00D0D49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5280398F1CF6F8CA008BD16C /* dx@2x.png in Resources */,
+				524B25FC1CF6D5BE00D0D49F /* LaunchScreen.storyboard in Resources */,
+				5280398E1CF6F8CA008BD16C /* dx_h@2x.png in Resources */,
+				524B263C1CF6D65700D0D49F /* checked.png in Resources */,
+				524B25F91CF6D5BE00D0D49F /* Assets.xcassets in Resources */,
+				524B25F71CF6D5BE00D0D49F /* Main.storyboard in Resources */,
+				524B263D1CF6D65700D0D49F /* unchecked.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B26001CF6D5BE00D0D49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B260B1CF6D5BE00D0D49F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		524B25E51CF6D5BE00D0D49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524B263F1CF6D65700D0D49F /* SZQuestionCell.m in Sources */,
+				524B26411CF6D65700D0D49F /* SZQuestionItem.m in Sources */,
+				524B25F11CF6D5BE00D0D49F /* AppDelegate.m in Sources */,
+				528039881CF6E858008BD16C /* DIYViewController.m in Sources */,
+				5280398B1CF6ED7D008BD16C /* ShowViewController.m in Sources */,
+				524B25EE1CF6D5BE00D0D49F /* main.m in Sources */,
+				528039851CF6DB3C008BD16C /* DefaultViewController.m in Sources */,
+				524B263E1CF6D65700D0D49F /* SZConfigure.m in Sources */,
+				524B26401CF6D65700D0D49F /* SZQuestionCheckBox.m in Sources */,
+				526176DF1CF7D72F00DF9DA4 /* SetFrameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B25FE1CF6D5BE00D0D49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524B26071CF6D5BE00D0D49F /* SZQuestionCheckBox_demoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524B26091CF6D5BE00D0D49F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524B26121CF6D5BE00D0D49F /* SZQuestionCheckBox_demoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		524B26041CF6D5BE00D0D49F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 524B25E81CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */;
+			targetProxy = 524B26031CF6D5BE00D0D49F /* PBXContainerItemProxy */;
+		};
+		524B260F1CF6D5BE00D0D49F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 524B25E81CF6D5BE00D0D49F /* SZQuestionCheckBox_demo */;
+			targetProxy = 524B260E1CF6D5BE00D0D49F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		524B25F51CF6D5BE00D0D49F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				524B25F61CF6D5BE00D0D49F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		524B25FA1CF6D5BE00D0D49F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				524B25FB1CF6D5BE00D0D49F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		524B26141CF6D5BE00D0D49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		524B26151CF6D5BE00D0D49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		524B26171CF6D5BE00D0D49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SZQuestionCheckBox_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		524B26181CF6D5BE00D0D49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SZQuestionCheckBox_demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		524B261A1CF6D5BE00D0D49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SZQuestionCheckBox_demoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SZQuestionCheckBox_demo.app/SZQuestionCheckBox_demo";
+			};
+			name = Debug;
+		};
+		524B261B1CF6D5BE00D0D49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SZQuestionCheckBox_demoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SZQuestionCheckBox_demo.app/SZQuestionCheckBox_demo";
+			};
+			name = Release;
+		};
+		524B261D1CF6D5BE00D0D49F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SZQuestionCheckBox_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SZQuestionCheckBox_demo;
+			};
+			name = Debug;
+		};
+		524B261E1CF6D5BE00D0D49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SZQuestionCheckBox_demoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.com.incons.SZQuestionCheckBox-demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SZQuestionCheckBox_demo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		524B25E41CF6D5BE00D0D49F /* Build configuration list for PBXProject "SZQuestionCheckBox_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524B26141CF6D5BE00D0D49F /* Debug */,
+				524B26151CF6D5BE00D0D49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		524B26161CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524B26171CF6D5BE00D0D49F /* Debug */,
+				524B26181CF6D5BE00D0D49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		524B26191CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524B261A1CF6D5BE00D0D49F /* Debug */,
+				524B261B1CF6D5BE00D0D49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		524B261C1CF6D5BE00D0D49F /* Build configuration list for PBXNativeTarget "SZQuestionCheckBox_demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524B261D1CF6D5BE00D0D49F /* Debug */,
+				524B261E1CF6D5BE00D0D49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 524B25E11CF6D5BE00D0D49F /* Project object */;
+}

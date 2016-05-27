@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u1P-7V-QkW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WYz-bC-zbR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u1P-7V-QkW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d0Q-4M-iAY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FUt-RX-vxn" kind="relationship" relationship="rootViewController" id="QOD-0n-fei"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JzV-q4-Caf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="661.5" y="437.5"/>
+        </scene>
+        <!--选择题-->
+        <scene sceneID="fxQ-Qc-8cl">
+            <objects>
+                <tableViewController id="FUt-RX-vxn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xrk-tn-Wk1" customClass="de">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="SbG-eI-pP6">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Inn-1Z-qO9">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Inn-1Z-qO9" id="UrC-Ov-Dlv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUA-Or-f51">
+                                                    <rect key="frame" x="15" y="7" width="352" height="36"/>
+                                                    <state key="normal" title="默认状态"/>
+                                                    <connections>
+                                                        <segue destination="eca-ON-Zm3" kind="show" id="6dN-7Y-c0t"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Kdn-GL-NhZ">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kdn-GL-NhZ" id="hJJ-M6-wVF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-fO-tSl">
+                                                    <rect key="frame" x="13" y="7" width="354" height="30"/>
+                                                    <state key="normal" title="根据需要自定义设置"/>
+                                                    <connections>
+                                                        <segue destination="PrW-Th-D4Q" kind="show" id="8tX-Ae-Siy"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2ni-uF-BnO">
+                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ni-uF-BnO" id="8dp-B3-kjh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zau-wW-xDh">
+                                                    <rect key="frame" x="13" y="7" width="354" height="30"/>
+                                                    <state key="normal" title="展示做完的结果"/>
+                                                    <connections>
+                                                        <segue destination="i3K-r4-YBh" kind="show" id="z9r-88-5Ue"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="251" id="PTI-Az-9Zr">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="251"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PTI-Az-9Zr" id="Dcw-es-4RT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最近主要做学校相关的项目时不时会做一些选择功能的界面，所以自己封装了一个，大家可以看看，不完善的地方请联系QQ：2586469773" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4u0-ig-IXw">
+                                                    <rect key="frame" x="57" y="99" width="285" height="129"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.4549019608" green="0.75294117650000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="FUt-RX-vxn" id="ugi-pb-qXy"/>
+                            <outlet property="delegate" destination="FUt-RX-vxn" id="Ntv-pZ-6FZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="选择题" id="a9V-XY-b2w"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMv-QS-nII" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118.5" y="437.5"/>
+        </scene>
+        <!--Set Frame View Controller-->
+        <scene sceneID="E3h-t1-b1a">
+            <objects>
+                <viewController id="8yR-bV-RI3" customClass="SetFrameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qVn-8v-ENN"/>
+                        <viewControllerLayoutGuide type="bottom" id="fby-uj-WJE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WbQ-5k-nNS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D3N-4G-E2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2030.5" y="727.5"/>
+        </scene>
+        <!--Show View Controller-->
+        <scene sceneID="t7y-mZ-Wt7">
+            <objects>
+                <viewController id="i3K-r4-YBh" customClass="ShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6sk-di-qR4"/>
+                        <viewControllerLayoutGuide type="bottom" id="kvG-e1-hLi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uw3-Ki-svY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lg-0T-tVT">
+                                <rect key="frame" x="112" y="319" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="显示"/>
+                                <connections>
+                                    <action selector="answerQuestion:" destination="i3K-r4-YBh" eventType="touchUpInside" id="hhR-AM-oev"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KhA-qe-ks6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606.5" y="1510.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HAe-R2-iGT">
+            <objects>
+                <viewController id="PrW-Th-D4Q" customClass="DIYViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qQ7-94-pBC"/>
+                        <viewControllerLayoutGuide type="bottom" id="d5h-l4-RZd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AJW-NG-f5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-Q6-4hz">
+                                <rect key="frame" x="82" y="93" width="223" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="更改字体的大小，字体的颜色"/>
+                                <connections>
+                                    <action selector="clickBtn1:" destination="PrW-Th-D4Q" eventType="touchUpInside" id="lYz-PX-HKp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-LW-1Ta">
+                                <rect key="frame" x="119" y="224" width="148" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="调整边距"/>
+                                <connections>
+                                    <action selector="clickBtn3:" destination="PrW-Th-D4Q" eventType="touchUpInside" id="5pb-2b-Dyh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kze-oE-y9Z">
+                                <rect key="frame" x="119" y="292" width="148" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="设置尺寸"/>
+                                <connections>
+                                    <action selector="clickBtn4:" destination="PrW-Th-D4Q" eventType="touchUpInside" id="EMb-Tn-SFL"/>
+                                    <segue destination="8yR-bV-RI3" kind="show" id="9vQ-q3-7Fc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwg-8d-d0J">
+                                <rect key="frame" x="82" y="156" width="223" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="更改选项框"/>
+                                <connections>
+                                    <action selector="clickBtn2:" destination="PrW-Th-D4Q" eventType="touchUpInside" id="wDC-vA-bTR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXz-a1-XFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596.5" y="727.5"/>
+        </scene>
+        <!--Default View Controller-->
+        <scene sceneID="5BS-eu-Lq7">
+            <objects>
+                <viewController id="eca-ON-Zm3" customClass="DefaultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xmJ-2U-oJK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lx0-at-IAN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="39r-va-Gqs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivF-TS-uGb">
+                                <rect key="frame" x="113" y="216" width="148" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="做题"/>
+                                <connections>
+                                    <action selector="answerQuestion:" destination="eca-ON-Zm3" eventType="touchUpInside" id="6UI-Yt-CUd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-fL-u6a">
+                                <rect key="frame" x="113" y="403" width="148" height="34"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="打印答案"/>
+                                <connections>
+                                    <action selector="showResult:" destination="eca-ON-Zm3" eventType="touchUpInside" id="oua-iZ-FWx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeM-Pa-m1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596.5" y="-8.5"/>
+        </scene>
+    </scenes>
+</document>
