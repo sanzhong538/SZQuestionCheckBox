@@ -29,7 +29,7 @@
     self.titleArray = [NSArray arrayWithObjects:@"第一题 你感觉这个Demo如何，能否帮助到你？", @"第二题 你感觉程序员是一群什么样的人？", @"第三题 作为程序员你最想对程序说的一句话是", nil];
     self.optionArray = [NSArray arrayWithObjects:@[@"很好，正是我所需要的", @"不错，值得学习借鉴", @"一般般而已，没什么好看的", @"太Low,不忍直视", @"不知所云"], @[@"最帅的", @"有钱途的", @"富有创造力", @"有梦想的", @"费脑的", @"坑爹的"], @[], nil];
     self.typeArray = @[@(1), @(2), @(3)];
-    self.item = [[SZQuestionItem alloc] initWithTitleArray:self.titleArray andOptionArray:self.optionArray andSelectArray:nil andQuestonType:self.typeArray];
+    self.item = [[SZQuestionItem alloc] initWithTitleArray:self.titleArray andOptionArray:self.optionArray andResultArray:nil andQuestonTypes:self.typeArray];
     
     
     // 左上
@@ -37,7 +37,7 @@
     configure1.titleFont = 13;
     configure1.optionFont = 12;
     configure1.oneLineHeight = 35;
-    configure1.buttonSize = 15;
+    configure1.buttonSize = 22;
     SZQuestionCheckBox *checkBox1 = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure1];
     [self addChildViewController:checkBox1];
     checkBox1.view.frame = CGRectMake(0, 0, self.view.center.x, self.view.center.y);
@@ -48,7 +48,7 @@
     configure2.titleFont = 13;
     configure2.optionFont = 12;
     configure2.oneLineHeight = 35;
-    configure2.buttonSize = 15;
+    configure2.buttonSize = 22;
     configure2.backColor = [UIColor redColor];
     SZQuestionCheckBox *checkBox2 = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure2];
     [self addChildViewController:checkBox2];
@@ -60,7 +60,7 @@
     configure3.titleFont = 13;
     configure3.optionFont = 12;
     configure3.oneLineHeight = 35;
-    configure3.buttonSize = 15;
+    configure3.buttonSize = 22;
     configure3.checkedImage = @"dx_h@2x";
     configure3.unCheckedImage = @"dx@2x";
     configure3.backColor = [UIColor orangeColor];
@@ -76,7 +76,7 @@
     configure4.titleFont = 13;
     configure4.optionFont = 12;
     configure4.oneLineHeight = 35;
-    configure4.buttonSize = 15;
+    configure4.buttonSize = 22;
     configure4.titleTextColor = [UIColor redColor];
     configure4.optionTextColor = [UIColor orangeColor];
     configure4.checkedImage = @"dx_h@2x";

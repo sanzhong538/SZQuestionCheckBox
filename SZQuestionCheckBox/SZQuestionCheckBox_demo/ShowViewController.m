@@ -31,7 +31,7 @@
     
     NSArray *selectArray = [NSArray arrayWithObjects:@[@"YES", @"NO", @"NO", @"NO", @"NO"], @[@"YES", @"YES", @"YES", @"YES", @"NO", @"NO"], @"程序是我的第二生命，给了我梦想，给了我生活，给了我乐趣，所以程序你值得拥有", nil];
     
-    SZQuestionItem *item = [[SZQuestionItem alloc] initWithTitleArray:titleArray andOptionArray:optionArray andSelectArray:selectArray andQuestonType:typeArray];
+    SZQuestionItem *item = [[SZQuestionItem alloc] initWithTitleArray:titleArray andOptionArray:optionArray andResultArray:selectArray andQuestonTypes:typeArray];
     
     self.questionBox = [[SZQuestionCheckBox alloc] initWithItem:item];
     

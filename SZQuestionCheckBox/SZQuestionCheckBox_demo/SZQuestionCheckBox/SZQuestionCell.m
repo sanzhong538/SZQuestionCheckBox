@@ -12,43 +12,12 @@
 
 @interface SZQuestionCell ()<UITextFieldDelegate>
 
-@property (nonatomic, strong) NSDictionary *contentDict;
-
-@property (nonatomic, strong) NSArray *letterArray;
-
-@property (nonatomic, strong) NSArray *buttonArray;
-
-@property (nonatomic, assign) NSInteger questionNum;
-
-@property (nonatomic, assign)  SZQuestionItemType type;
-
-@property (nonatomic, strong) SZConfigure *configure;
-
-// configure 属性
-
-@property (nonatomic, assign) CGFloat titleFont;
-
-@property (nonatomic, assign) CGFloat optionFont;
-
-@property (nonatomic, strong) UIColor *backColor;
-
-@property (nonatomic, strong) UIColor *titleTextColor;
-
-@property (nonatomic, strong) UIColor *optionTextColor;
-
-@property (nonatomic, assign) CGFloat oneLineHeight;
-
-@property (nonatomic, assign) CGFloat topDistance;
-
-@property (nonatomic, assign) CGFloat titleSideMargin;
-
-@property (nonatomic, assign) CGFloat optionSideMargin;
-
-@property (nonatomic, assign) CGFloat buttonSize;
-
-@property (nonatomic, copy) NSString *checkedImage;
-
-@property (nonatomic, copy) NSString *unCheckedImage;
+@property (nonatomic, strong) NSDictionary          *contentDict;
+@property (nonatomic, strong) NSArray               *letterArray;
+@property (nonatomic, strong) NSArray               *buttonArray;
+@property (nonatomic, assign) NSInteger             questionNum;
+@property (nonatomic, assign)  SZQuestionItemType   type;
+@property (nonatomic, strong) SZConfigure           *configure;
 
 @end
 
@@ -62,7 +31,12 @@
     [super setSelected:selected animated:animated];
 }
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andDict:(NSDictionary *)contentDict andQuestionNum:(NSInteger)questionNum andWidth:(CGFloat)width andConfigure:(SZConfigure *)configure {
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier
+                      andDict:(NSDictionary *)contentDict
+               andQuestionNum:(NSInteger)questionNum
+                     andWidth:(CGFloat)width
+                 andConfigure:(SZConfigure *)configure {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
@@ -76,44 +50,30 @@
     return self;
 }
 
-- (void)setConfigure:(SZConfigure *)configure {
-    
-    _configure = configure;
-    self.titleFont      = configure.titleFont ? configure.titleFont : 17;
-    self.optionFont     = configure.optionFont ? configure.optionFont : 16;
-    self.oneLineHeight  = configure.oneLineHeight ? configure.oneLineHeight : OPEN_OPTION_CELL_H;
-    self.topDistance    = configure.topDistance ? configure.topDistance : 5;
-    self.buttonSize     = configure.buttonSize ? configure.buttonSize : BUTTON_WIDTH;
-    self.checkedImage   = configure.checkedImage ? configure.checkedImage : @"checked";
-    self.unCheckedImage = configure.unCheckedImage ? configure.unCheckedImage : @"unchecked";
-    self.backColor      = configure.backColor ? configure.backColor : [UIColor whiteColor];
-    self.titleTextColor   = configure.titleTextColor ? configure.titleTextColor : [UIColor blackColor];
-    self.optionSideMargin = configure.optionSideMargin  ? configure.optionSideMargin : OPTION_MARGIN;
-    self.titleSideMargin  = configure.titleSideMargin ? configure.titleSideMargin : HEADER_MARGIN;
-    self.optionTextColor  = configure.optionTextColor ? configure.optionTextColor : [UIColor blackColor];
-}
-
 - (void)setupLayoutWithDict:(NSDictionary *)dict andWidth:(CGFloat)width{
     
-    CGFloat titleWidth = width - self.titleSideMargin * 2;
-    CGFloat optionWidth = width - self.optionSideMargin * 2 - self.buttonSize - 5;
-    self.topDistance = self.questionNum == 1 ? self.topDistance : 5;
-    self.backgroundColor = self.backColor;
+    CGFloat titleWidth = width - self.configure.titleSideMargin * 2;
+    CGFloat optionWidth = width - self.configure.optionSideMargin * 2 - self.configure.buttonSize - 5;
+    self.configure.topDistance = self.questionNum == 1 ? self.configure.topDistance : 5;
+    self.backgroundColor = self.configure.backColor;
     // 标题
-    CGFloat height = [SZQuestionItem heightForString:dict[@"title"] width:titleWidth fontSize:self.titleFont oneLineHeight:self.oneLineHeight];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.titleSideMargin, self.topDistance, titleWidth, height)];
-    titleLabel.textColor = self.titleTextColor;
-    titleLabel.font = [UIFont systemFontOfSize:self.titleFont];
+    CGFloat height = [SZQuestionItem heightForString:dict[@"title"]
+                                               width:titleWidth
+                                            fontSize:self.configure.titleFont
+                                       oneLineHeight:self.configure.oneLineHeight];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.configure.titleSideMargin, self.configure.topDistance, titleWidth, height)];
+    titleLabel.textColor = self.configure.titleTextColor;
+    titleLabel.font = [UIFont systemFontOfSize:self.configure.titleFont];
     titleLabel.text = [NSString stringWithFormat:@"%zd、%@", self.questionNum, dict[@"title"]];
     titleLabel.numberOfLines = 0;
     [self addSubview:titleLabel];
     
     // 选项或回答框
     if ([dict[@"type"] intValue] == SZQuestionOpenQuestion) {
-        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.optionSideMargin, height + self.topDistance, width - self.optionSideMargin * 2, self.oneLineHeight - 10)];
-        textField.font = [UIFont systemFontOfSize:self.optionFont];
+        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, self.configure.oneLineHeight - 10)];
+        textField.font = [UIFont systemFontOfSize:self.configure.optionFont];
         textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.textColor = self.optionTextColor;
+        textField.textColor = self.configure.optionTextColor;
         textField.delegate = self;
         if (dict[@"marked"] != nil) {
             textField.text = dict[@"marked"];
@@ -128,18 +88,22 @@
         NSArray *selectArray = dict[@"marked"];
         for (int i = 0; i < optionArray.count; i++) {
             
-            CGFloat option_height = [SZQuestionItem heightForString:optionArray[i] width:optionWidth fontSize:self.optionFont oneLineHeight:self.oneLineHeight];
+            CGFloat option_height = [SZQuestionItem heightForString:optionArray[i]
+                                                              width:optionWidth
+                                                           fontSize:self.configure.optionFont
+                                                      oneLineHeight:self.configure.oneLineHeight];
             if (currentLabel == nil) {
-                UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(self.optionSideMargin + self.buttonSize + 5, height + self.topDistance, optionWidth, option_height)];
+                UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin + self.configure.buttonSize + 5, height + self.configure.topDistance, optionWidth, option_height)];
                 lbl.numberOfLines = 0;
-                lbl.textColor = self.optionTextColor;
-                lbl.font = [UIFont systemFontOfSize:self.optionFont];
+                lbl.textColor = self.configure.optionTextColor;
+                lbl.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+                lbl.font = [UIFont systemFontOfSize:self.configure.optionFont];
                 lbl.text = [NSString stringWithFormat:@"%@、%@", self.letterArray[i], optionArray[i]];
                 [self addSubview:lbl];
                 
-                UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.optionSideMargin, height + self.topDistance + 5, self.buttonSize, self.buttonSize)];
-                [btn setImage:[UIImage imageNamed:self.unCheckedImage] forState:UIControlStateNormal];
-                [btn setImage:[UIImage imageNamed:self.checkedImage] forState:UIControlStateSelected];
+                UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance + ABS(self.configure.oneLineHeight - self.configure.buttonSize) * 0.5, self.configure.buttonSize, self.configure.buttonSize)];
+                [btn setImage:[UIImage imageNamed:self.configure.unCheckedImage] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:self.configure.checkedImage] forState:UIControlStateSelected];
                 [btn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
                 btn.selected = selectArray.count > 0 ? [selectArray[i] boolValue] : NO;
                 [self addSubview:btn];
@@ -148,16 +112,17 @@
                 currentLabel = lbl;
             }
             else {
-                UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(self.optionSideMargin + self.buttonSize + 5, CGRectGetMaxY(currentLabel.frame), optionWidth, option_height)];
+                UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin + self.configure.buttonSize + 5, CGRectGetMaxY(currentLabel.frame), optionWidth, option_height)];
                 lbl.numberOfLines = 0;
-                lbl.textColor = self.optionTextColor;
-                lbl.font = [UIFont systemFontOfSize:self.optionFont];
+                lbl.textColor = self.configure.optionTextColor;
+                lbl.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+                lbl.font = [UIFont systemFontOfSize:self.configure.optionFont];
                 lbl.text = [NSString stringWithFormat:@"%@、%@", self.letterArray[i], optionArray[i]];
                 [self addSubview:lbl];
                 
-                UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.optionSideMargin, CGRectGetMaxY(currentLabel.frame) + 5, self.buttonSize, self.buttonSize)];
-                [btn setImage:[UIImage imageNamed:self.unCheckedImage] forState:UIControlStateNormal];
-                [btn setImage:[UIImage imageNamed:self.checkedImage] forState:UIControlStateSelected];
+                UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, CGRectGetMaxY(currentLabel.frame) + ABS(self.configure.oneLineHeight - self.configure.buttonSize) * 0.5, self.configure.buttonSize, self.configure.buttonSize)];
+                [btn setImage:[UIImage imageNamed:self.configure.unCheckedImage] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:self.configure.checkedImage] forState:UIControlStateSelected];
                 [btn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
                 btn.selected = selectArray.count > 0 ? [selectArray[i] boolValue] : NO;
                 [self addSubview:btn];

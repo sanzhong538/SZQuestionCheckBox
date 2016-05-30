@@ -33,7 +33,7 @@
 @property (nonatomic, strong, readonly) NSArray *resultArray;
 
 /**
- *  构造方法
+ *  构造方法 -- 默认设置
  *
  *  @param questionItem 资源模型
  *
@@ -42,7 +42,7 @@
 - (instancetype)initWithItem:(SZQuestionItem *)questionItem;
 
 /**
- *  构造方法
+ *  构造方法 -- 自定义设置
  *
  *  @param questionItem 资源模型
  *  @param configure    配置信息

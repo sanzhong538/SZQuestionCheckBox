@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 @class SZConfigure;
 
-#define BUTTON_WIDTH 30
-#define HEADER_MARGIN 10
-#define OPTION_MARGIN 20
-#define OPEN_OPTION_CELL_H 44
-#define WIDTH (self.frame.size.width)
-#define HEIGHT (self.frame.size.height)
-
 typedef void(^selectOptionBack)(NSInteger index, NSDictionary *dict);
 
 @interface SZQuestionCell : UITableViewCell

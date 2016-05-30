@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#define BUTTON_WIDTH 30
+#define HEADER_MARGIN 10
+#define OPTION_MARGIN 20
+#define OPEN_OPTION_CELL_H 44
+#define WIDTH (self.frame.size.width)
+#define HEIGHT (self.frame.size.height)
+
 @interface SZConfigure : NSObject
 
 /**
