@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSArray               *letterArray;
 @property (nonatomic, strong) NSArray               *buttonArray;
 @property (nonatomic, assign) NSInteger             questionNum;
-@property (nonatomic, assign)  SZQuestionItemType   type;
+@property (nonatomic, assign) SZQuestionItemType    type;
 @property (nonatomic, strong) SZConfigure           *configure;
 
 @end
@@ -41,10 +41,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.configure      = configure;
-        self.contentDict    = contentDict;
-        self.questionNum    = questionNum;
-        self.type           = [contentDict[@"type"] integerValue];
+        self.configure      =   configure;
+        self.contentDict    =   contentDict;
+        self.questionNum    =   questionNum;
+        self.type           =   [contentDict[@"type"] integerValue];
         [self setupLayoutWithDict:contentDict andWidth:width];
     }
     return self;
@@ -61,10 +61,11 @@
                                                width:titleWidth
                                             fontSize:self.configure.titleFont
                                        oneLineHeight:self.configure.oneLineHeight];
+    
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.configure.titleSideMargin, self.configure.topDistance, titleWidth, height)];
     titleLabel.textColor = self.configure.titleTextColor;
     titleLabel.font = [UIFont systemFontOfSize:self.configure.titleFont];
-    titleLabel.text = [NSString stringWithFormat:@"%zd、%@", self.questionNum, dict[@"title"]];
+    titleLabel.text = self.configure.automaticAddLineNumber ? [NSString stringWithFormat:@"%zd、%@", self.questionNum, dict[@"title"]] : dict[@"title"];
     titleLabel.numberOfLines = 0;
     [self addSubview:titleLabel];
     

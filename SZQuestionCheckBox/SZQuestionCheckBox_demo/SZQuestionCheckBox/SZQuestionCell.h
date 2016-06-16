@@ -15,6 +15,11 @@ typedef void(^selectOptionBack)(NSInteger index, NSDictionary *dict);
 
 @property (nonatomic, copy) selectOptionBack selectOptionBack;
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier andDict:(NSDictionary *)contentDict andQuestionNum:(NSInteger)questionNum andWidth:(CGFloat)width andConfigure:(SZConfigure *)configure;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier
+                      andDict:(NSDictionary *)contentDict
+               andQuestionNum:(NSInteger)questionNum
+                     andWidth:(CGFloat)width
+                 andConfigure:(SZConfigure *)configure;
 
 @end

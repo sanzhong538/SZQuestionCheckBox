@@ -10,6 +10,11 @@
 #import "SZConfigure.h"
 #import "SZQuestionItem.h"
 
+typedef NS_ENUM(NSInteger, QuestionCheckBoxType) {
+    QuestionCheckBoxWithHeader = 1,
+    QuestionCheckBoxWithoutHeader
+};
+
 @interface SZQuestionCheckBox : UITableViewController
 
 /*
@@ -50,5 +55,26 @@
  *  @return 
  */
 - (instancetype)initWithItem:(SZQuestionItem *)questionItem andConfigure:(SZConfigure *)configure;
+
+/**
+ *  构造方法
+ *
+ *  @param questionItem 资源模型
+ *  @param checkBoxType 布局类型
+ *
+ *  @return
+ */
+- (instancetype)initWithItem:(SZQuestionItem *)questionItem andCheckBoxType:(QuestionCheckBoxType)checkBoxType;
+
+/**
+ *  构造方法
+ *
+ *  @param questionItem 资源模型
+ *  @param checkBoxType 布局类型
+ *  @param configure    配置信息
+ *
+ *  @return
+ */
+- (instancetype)initWithItem:(SZQuestionItem *)questionItem andCheckBoxType:(QuestionCheckBoxType)checkBoxType andConfigure:(SZConfigure *)configure;
 
 @end

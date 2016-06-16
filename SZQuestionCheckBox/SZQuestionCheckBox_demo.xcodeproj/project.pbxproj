@@ -21,6 +21,7 @@
 		524B26411CF6D65700D0D49F /* SZQuestionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 524B263B1CF6D65700D0D49F /* SZQuestionItem.m */; };
 		52612C021CFC23E5007CB8C3 /* DefaultSameTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52612C011CFC23E5007CB8C3 /* DefaultSameTypeController.m */; };
 		526176DF1CF7D72F00DF9DA4 /* SetFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526176DE1CF7D72F00DF9DA4 /* SetFrameViewController.m */; };
+		5266142A1D124E4400970536 /* SZQuestionOptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526614291D124E4400970536 /* SZQuestionOptionCell.m */; };
 		528039851CF6DB3C008BD16C /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528039841CF6DB3C008BD16C /* DefaultViewController.m */; };
 		528039881CF6E858008BD16C /* DIYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528039871CF6E858008BD16C /* DIYViewController.m */; };
 		5280398B1CF6ED7D008BD16C /* ShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5280398A1CF6ED7D008BD16C /* ShowViewController.m */; };
@@ -73,6 +74,8 @@
 		52612C011CFC23E5007CB8C3 /* DefaultSameTypeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultSameTypeController.m; sourceTree = "<group>"; };
 		526176DD1CF7D72F00DF9DA4 /* SetFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetFrameViewController.h; sourceTree = "<group>"; };
 		526176DE1CF7D72F00DF9DA4 /* SetFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetFrameViewController.m; sourceTree = "<group>"; };
+		526614281D124E4400970536 /* SZQuestionOptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQuestionOptionCell.h; sourceTree = "<group>"; };
+		526614291D124E4400970536 /* SZQuestionOptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQuestionOptionCell.m; sourceTree = "<group>"; };
 		528039831CF6DB3C008BD16C /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
 		528039841CF6DB3C008BD16C /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
 		528039861CF6E858008BD16C /* DIYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYViewController.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				524B26351CF6D65700D0D49F /* SZConfigure.m */,
 				524B26361CF6D65700D0D49F /* SZQuestionCell.h */,
 				524B26371CF6D65700D0D49F /* SZQuestionCell.m */,
+				526614281D124E4400970536 /* SZQuestionOptionCell.h */,
+				526614291D124E4400970536 /* SZQuestionOptionCell.m */,
 				524B26381CF6D65700D0D49F /* SZQuestionCheckBox.h */,
 				524B26391CF6D65700D0D49F /* SZQuestionCheckBox.m */,
 				524B263A1CF6D65700D0D49F /* SZQuestionItem.h */,
@@ -349,6 +354,7 @@
 				524B263F1CF6D65700D0D49F /* SZQuestionCell.m in Sources */,
 				524B26411CF6D65700D0D49F /* SZQuestionItem.m in Sources */,
 				524B25F11CF6D5BE00D0D49F /* AppDelegate.m in Sources */,
+				5266142A1D124E4400970536 /* SZQuestionOptionCell.m in Sources */,
 				528039881CF6E858008BD16C /* DIYViewController.m in Sources */,
 				5280398B1CF6ED7D008BD16C /* ShowViewController.m in Sources */,
 				524B25EE1CF6D5BE00D0D49F /* main.m in Sources */,

@@ -60,6 +60,7 @@
     SZConfigure *configure = [[SZConfigure alloc] init];
     configure.checkedImage = @"dx_h@2x";
     configure.unCheckedImage = @"dx@2x";
+    configure.oneLineHeight = 35;
     configure.optionTextColor = [UIColor lightGrayColor];
     self.questionBox = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure];
     [self.navigationController pushViewController:self.questionBox animated:YES];

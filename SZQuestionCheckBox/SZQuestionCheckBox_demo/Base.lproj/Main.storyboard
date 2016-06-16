@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u1P-7V-QkW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u1P-7V-QkW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -95,7 +95,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zau-wW-xDh">
                                                     <rect key="frame" x="13" y="7" width="354" height="30"/>
-                                                    <state key="normal" title="展示做完的结果"/>
+                                                    <state key="normal" title="不同布局的展示"/>
                                                     <connections>
                                                         <segue destination="i3K-r4-YBh" kind="show" id="z9r-88-5Ue"/>
                                                     </connections>
@@ -164,11 +164,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lg-0T-tVT">
+                                <rect key="frame" x="112" y="200" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="不含headerView"/>
+                                <connections>
+                                    <action selector="showQuestionWithoutHeader:" destination="i3K-r4-YBh" eventType="touchUpInside" id="gGw-6b-SfV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjA-xl-Oz0">
                                 <rect key="frame" x="112" y="319" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="显示"/>
+                                <state key="normal" title="含headerView"/>
                                 <connections>
-                                    <action selector="answerQuestion:" destination="i3K-r4-YBh" eventType="touchUpInside" id="hhR-AM-oev"/>
+                                    <action selector="showQuestionWithHeader:" destination="i3K-r4-YBh" eventType="touchUpInside" id="QJG-c8-tpx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,7 +208,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-LW-1Ta">
-                                <rect key="frame" x="119" y="224" width="148" height="34"/>
+                                <rect key="frame" x="82" y="224" width="223" height="34"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="调整边距"/>
                                 <connections>
@@ -208,7 +216,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kze-oE-y9Z">
-                                <rect key="frame" x="119" y="292" width="148" height="34"/>
+                                <rect key="frame" x="82" y="292" width="223" height="34"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.72549019609999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="设置尺寸"/>
                                 <connections>

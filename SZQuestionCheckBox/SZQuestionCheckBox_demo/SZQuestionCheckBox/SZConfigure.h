@@ -77,4 +77,9 @@
  */
 @property (nonatomic, strong) UIColor *backColor;
 
+/**
+ *  自动添加题号，默认 NO
+ */
+@property (nonatomic, assign) BOOL automaticAddLineNumber;
+
 @end
