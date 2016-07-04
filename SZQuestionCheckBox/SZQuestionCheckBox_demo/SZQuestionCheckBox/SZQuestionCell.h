@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class SZConfigure;
 
-typedef void(^selectOptionBack)(NSInteger index, NSDictionary *dict);
+typedef void(^selectOptionBack)(NSInteger index, NSDictionary *dict, BOOL refresh);
 
 @interface SZQuestionCell : UITableViewCell
 

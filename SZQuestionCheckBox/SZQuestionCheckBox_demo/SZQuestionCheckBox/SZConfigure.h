@@ -82,4 +82,19 @@
  */
 @property (nonatomic, assign) BOOL automaticAddLineNumber;
 
+/**
+ *  cell 的背景图片
+ */
+@property (nonatomic, copy) NSString *cellBackgroundImage;
+
+/**
+ *  主观题的回答框，默认NO 用UITextField，设置YES 用 UITextView
+ */
+@property (nonatomic, assign) BOOL answerFrameUseTextView;
+
+/**
+ *  主观题的回答框用 UITextView 时，限制高度
+ */
+@property (nonatomic, assign) CGFloat answerFrameLimitHeight;
+
 @end

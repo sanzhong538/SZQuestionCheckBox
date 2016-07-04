@@ -10,7 +10,7 @@
 #import "SZConfigure.h"
 #import "SZQuestionItem.h"
 
-@interface SZQuestionCell ()<UITextFieldDelegate>
+@interface SZQuestionCell ()<UITextFieldDelegate, UITextViewDelegate>
 
 @property (nonatomic, strong) NSDictionary          *contentDict;
 @property (nonatomic, strong) NSArray               *letterArray;
@@ -18,6 +18,7 @@
 @property (nonatomic, assign) NSInteger             questionNum;
 @property (nonatomic, assign) SZQuestionItemType    type;
 @property (nonatomic, strong) SZConfigure           *configure;
+@property (nonatomic, assign) CGFloat               current_height;
 
 @end
 
@@ -52,6 +53,11 @@
 
 - (void)setupLayoutWithDict:(NSDictionary *)dict andWidth:(CGFloat)width{
     
+    if (self.configure.cellBackgroundImage) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.frame];
+        imageView.image = [UIImage imageNamed:self.configure.cellBackgroundImage];
+        self.backgroundView = imageView;
+    }
     CGFloat titleWidth = width - self.configure.titleSideMargin * 2;
     CGFloat optionWidth = width - self.configure.optionSideMargin * 2 - self.configure.buttonSize - 5;
     self.configure.topDistance = self.questionNum == 1 ? self.configure.topDistance : 5;
@@ -71,15 +77,36 @@
     
     // 选项或回答框
     if ([dict[@"type"] intValue] == SZQuestionOpenQuestion) {
-        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, self.configure.oneLineHeight - 10)];
-        textField.font = [UIFont systemFontOfSize:self.configure.optionFont];
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.textColor = self.configure.optionTextColor;
-        textField.delegate = self;
-        if (dict[@"marked"] != nil) {
-            textField.text = dict[@"marked"];
+        
+        if (self.configure.answerFrameUseTextView == NO) {
+            
+            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, self.configure.oneLineHeight - 5)];
+            textField.font = [UIFont systemFontOfSize:self.configure.optionFont];
+            textField.borderStyle = UITextBorderStyleRoundedRect;
+            textField.textColor = self.configure.optionTextColor;
+            textField.delegate = self;
+            if (dict[@"marked"] != nil) {
+                textField.text = dict[@"marked"];
+            }
+            [self addSubview: textField];
         }
-        [self addSubview: textField];
+        else {
+            
+            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, self.configure.oneLineHeight - 5)];
+            textView.font = [UIFont systemFontOfSize:self.configure.optionFont];
+            textView.textColor = self.configure.optionTextColor;
+            textView.showsVerticalScrollIndicator = NO;
+            textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            textView.layer.borderWidth = 1;
+            textView.layer.cornerRadius = 5;
+            textView.layer.masksToBounds = YES;
+            textView.bounces = NO;
+            textView.delegate = self;
+            if (dict[@"marked"] != nil) {
+                textView.text = dict[@"marked"];
+            }
+            [self addSubview:textView];
+        }
     }
     else {
         
@@ -136,14 +163,58 @@
     }
 }
 
+#pragma mark -  UITextViewDelegate
+
+- (void)textViewDidChangeSelection:(UITextView *)textView {
+    
+    BOOL refresh = NO;
+    NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
+    dictM[@"marked"] = textView.text;
+    
+    CGFloat h = [SZQuestionItem heightForString:textView.text width:textView.frame.size.width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
+    if (self.current_height > 0 && self.current_height != h) {
+        refresh = YES;
+    }
+    self.current_height = h;
+    CGRect rect = textView.frame;
+    if (self.configure.answerFrameLimitHeight && h > self.configure.answerFrameLimitHeight) {
+        rect.size.height = self.configure.answerFrameLimitHeight;
+    }
+    else {
+        rect.size.height = h;
+    }
+    textView.frame = rect;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.selectOptionBack) {
+            self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+        }
+        [textView becomeFirstResponder];
+    });
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    
+    if (textView.text.length > 0) {
+        self.current_height = [SZQuestionItem heightForString:textView.text width:textView.frame.size.width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
+    }
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    
+    self.current_height = 0;
+}
+
 #pragma mark -  UITextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
-    dictM[@"marked"] = textField.text;
-    self.selectOptionBack(self.questionNum - 1, dictM.copy);
-    
+    NSString *txtString = textField.text;
+    dictM[@"marked"] = ([string isEqualToString:@""] && txtString.length > 0) ? [txtString substringToIndex:txtString.length - 1] : [txtString stringByAppendingString:string];
+    if (self.selectOptionBack) {
+        self.selectOptionBack(self.questionNum - 1, dictM.copy, NO);
+    }
     return YES;
 }
 
@@ -174,7 +245,7 @@
         }
         dictM[@"marked"] = tempArray.copy;
     }
-    self.selectOptionBack(self.questionNum - 1, dictM.copy);
+    self.selectOptionBack(self.questionNum - 1, dictM.copy, NO);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

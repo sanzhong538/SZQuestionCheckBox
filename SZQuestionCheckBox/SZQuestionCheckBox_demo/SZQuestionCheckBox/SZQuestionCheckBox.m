@@ -64,8 +64,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    self.titleWidth = self.view.frame.size.width - (self.configure.titleSideMargin ? self.configure.titleSideMargin * 2 : HEADER_MARGIN * 2);
-    self.OptionWidth = self.view.frame.size.width - (self.configure.optionSideMargin ? self.configure.optionSideMargin * 2 : OPTION_MARGIN * 2) - (self.configure.buttonSize ? self.configure.buttonSize : BUTTON_WIDTH - 5);
+    self.titleWidth = self.view.frame.size.width - self.configure.titleSideMargin * 2;
+    self.OptionWidth = self.view.frame.size.width - self.configure.optionSideMargin * 2 - self.configure.buttonSize - 5;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,7 +94,7 @@
         if ([dict[@"type"] integerValue] == SZQuestionOpenQuestion) {
             NSString *str = dict[@"marked"];
             complete      = (str.length > 0) && complete;
-            [arrayM addObject:str.length ? dict[@"marked"] : [NSNull null]];
+            [arrayM addObject:str.length ? dict[@"marked"] : @""];
         }
         else {
             NSArray *array = dict[@"marked"];
@@ -173,9 +173,13 @@
                                                             andWidth:self.view.frame.size.width
                                                         andConfigure:self.configure];
         __weak typeof(self) weakSelf = self;
-        cell.selectOptionBack = ^(NSInteger index, NSDictionary *dict) {
+        cell.selectOptionBack = ^(NSInteger index, NSDictionary *dict, BOOL refresh) {
             [weakSelf.arrayM replaceObjectAtIndex:index withObject:dict];
             weakSelf.sourceArray = weakSelf.arrayM.copy;
+            if (refresh) {
+                NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
+                [weakSelf.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationNone];
+            }
         };
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.userInteractionEnabled = self.canEdit;
@@ -236,7 +240,7 @@
         NSDictionary *dict = self.sourceArray[indexPath.section];
         if ([dict[@"type"] intValue] == SZQuestionOpenQuestion) {
             
-            return self.configure.oneLineHeight ? self.configure.oneLineHeight : 44;
+            return self.configure.oneLineHeight;
         }
         else {
             
@@ -257,7 +261,15 @@
                                                              width:self.titleWidth
                                                           fontSize:self.configure.titleFont
                                                      oneLineHeight:self.configure.oneLineHeight];
-            return title_height + (self.configure.oneLineHeight ? self.configure.oneLineHeight : 44) + topDistance;
+            if ([dict[@"marked"] length] > 0) {
+                CGFloat answer_width = self.view.frame.size.width - self.configure.optionSideMargin * 2;
+                CGFloat answer_height = [SZQuestionItem heightForString:dict[@"marked"] width:answer_width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
+                if (self.configure.answerFrameLimitHeight && answer_height > self.configure.answerFrameLimitHeight) {
+                    return title_height + self.configure.answerFrameLimitHeight + 10 + topDistance;
+                }
+                return title_height + answer_height + 10 + topDistance;
+            }
+            return title_height + self.configure.oneLineHeight + topDistance;
         }
         else {
             
