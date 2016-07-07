@@ -60,6 +60,16 @@
     return _unCheckedImage ? _unCheckedImage : @"resource.bundle/unchecked";
 }
 
+- (NSString *)multipleUncheckedImage {
+    
+    return _multipleUncheckedImage ? _multipleUncheckedImage : self.unCheckedImage;
+}
+
+- (NSString *)multipleCheckedImage {
+    
+    return _multipleCheckedImage ? _multipleCheckedImage : self.checkedImage;
+}
+
 - (UIColor *)titleTextColor {
     
     return _titleTextColor ? _titleTextColor : [UIColor blackColor];
@@ -68,16 +78,6 @@
 - (UIColor *)optionTextColor {
     
     return _optionTextColor ? _optionTextColor : [UIColor blackColor];
-}
-
-- (void)setMultipleCheckedImage:(NSString *)multipleCheckedImage {
-    
-    _multipleCheckedImage = multipleCheckedImage ? multipleCheckedImage : self.checkedImage;
-}
-
-- (void)setMultipleUncheckedImage:(NSString *)multipleUncheckedImage {
-    
-    _multipleUncheckedImage = multipleUncheckedImage ? multipleUncheckedImage : self.unCheckedImage;
 }
 
 @end
