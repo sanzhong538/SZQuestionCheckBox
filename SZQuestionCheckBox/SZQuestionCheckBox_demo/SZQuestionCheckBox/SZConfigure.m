@@ -70,4 +70,14 @@
     return _optionTextColor ? _optionTextColor : [UIColor blackColor];
 }
 
+- (void)setMultipleCheckedImage:(NSString *)multipleCheckedImage {
+    
+    _multipleCheckedImage = multipleCheckedImage ? multipleCheckedImage : self.checkedImage;
+}
+
+- (void)setMultipleUncheckedImage:(NSString *)multipleUncheckedImage {
+    
+    _multipleUncheckedImage = multipleUncheckedImage ? multipleUncheckedImage : self.unCheckedImage;
+}
+
 @end

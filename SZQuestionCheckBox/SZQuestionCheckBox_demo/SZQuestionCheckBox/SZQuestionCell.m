@@ -76,7 +76,7 @@
     [self addSubview:titleLabel];
     
     // 选项或回答框
-    if ([dict[@"type"] intValue] == SZQuestionOpenQuestion) {
+    if (self.type == SZQuestionOpenQuestion) {
         
         if (self.configure.answerFrameUseTextView == NO) {
             
@@ -114,6 +114,7 @@
         NSMutableArray *tempArray = [NSMutableArray array];
         NSArray *optionArray = dict[@"option"];
         NSArray *selectArray = dict[@"marked"];
+        BOOL isSingleChoice = (self.type == SZQuestionSingleChoice);
         for (int i = 0; i < optionArray.count; i++) {
             
             CGFloat option_height = [SZQuestionItem heightForString:optionArray[i]
@@ -130,8 +131,8 @@
                 [self addSubview:lbl];
                 
                 UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance + ABS(self.configure.oneLineHeight - self.configure.buttonSize) * 0.5, self.configure.buttonSize, self.configure.buttonSize)];
-                [btn setImage:[UIImage imageNamed:self.configure.unCheckedImage] forState:UIControlStateNormal];
-                [btn setImage:[UIImage imageNamed:self.configure.checkedImage] forState:UIControlStateSelected];
+                [btn setImage:[UIImage imageNamed:(isSingleChoice ? self.configure.unCheckedImage : self.configure.multipleUncheckedImage)] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:(isSingleChoice ? self.configure.checkedImage : self.configure.multipleCheckedImage)] forState:UIControlStateSelected];
                 [btn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
                 btn.selected = selectArray.count > 0 ? [selectArray[i] boolValue] : NO;
                 [self addSubview:btn];
@@ -149,8 +150,8 @@
                 [self addSubview:lbl];
                 
                 UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, CGRectGetMaxY(currentLabel.frame) + ABS(self.configure.oneLineHeight - self.configure.buttonSize) * 0.5, self.configure.buttonSize, self.configure.buttonSize)];
-                [btn setImage:[UIImage imageNamed:self.configure.unCheckedImage] forState:UIControlStateNormal];
-                [btn setImage:[UIImage imageNamed:self.configure.checkedImage] forState:UIControlStateSelected];
+                [btn setImage:[UIImage imageNamed:(isSingleChoice ? self.configure.unCheckedImage : self.configure.multipleUncheckedImage)] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:(isSingleChoice ? self.configure.checkedImage : self.configure.multipleCheckedImage)] forState:UIControlStateSelected];
                 [btn addTarget:self action:@selector(clickButton:) forControlEvents:UIControlEventTouchUpInside];
                 btn.selected = selectArray.count > 0 ? [selectArray[i] boolValue] : NO;
                 [self addSubview:btn];
@@ -185,10 +186,17 @@
     }
     textView.frame = rect;
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (self.selectOptionBack) {
-            self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+        @try
+        {
+            if (self.selectOptionBack) {
+                self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+            }
+            [textView becomeFirstResponder];
+
+        }@catch (NSException * e) {
+
+            [textView becomeFirstResponder];
         }
-        [textView becomeFirstResponder];
     });
 }
 

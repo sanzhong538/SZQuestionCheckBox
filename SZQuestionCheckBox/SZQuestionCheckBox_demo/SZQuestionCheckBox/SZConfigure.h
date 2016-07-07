@@ -73,6 +73,16 @@
 @property (nonatomic, copy) NSString *unCheckedImage;
 
 /**
+ *  单独设定多选选中时的图片名
+ */
+@property (nonatomic, copy) NSString *multipleCheckedImage;
+
+/**
+ *  单独设定多选未选中时的图片名
+ */
+@property (nonatomic, copy) NSString *multipleUncheckedImage;
+
+/**
  *  背景颜色
  */
 @property (nonatomic, strong) UIColor *backColor;

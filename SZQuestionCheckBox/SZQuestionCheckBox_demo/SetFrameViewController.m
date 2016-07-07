@@ -79,8 +79,11 @@
     configure4.buttonSize = 22;
     configure4.titleTextColor = [UIColor redColor];
     configure4.optionTextColor = [UIColor orangeColor];
-    configure4.checkedImage = @"dx_h@2x";
-    configure4.unCheckedImage = @"dx@2x";
+    configure4.multipleCheckedImage = @"dx_h@2x";
+    configure4.multipleUncheckedImage = @"dx@2x";
+    configure4.checkedImage = @"resource.bundle/checked";
+    configure4.unCheckedImage = @"resource.bundle/unchecked";
+    configure4.answerFrameUseTextView = YES;
     SZQuestionCheckBox *checkBox4 = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure4];
     checkBox4.tableView.bounces = NO;
     checkBox4.tableView.showsVerticalScrollIndicator = NO;
