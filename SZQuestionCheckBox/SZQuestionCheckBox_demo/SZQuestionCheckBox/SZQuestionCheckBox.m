@@ -87,6 +87,7 @@
 
 - (void)getResult {
     
+    [self.view endEditing:YES];
     BOOL complete          = true;
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in self.sourceArray) {
@@ -94,12 +95,12 @@
         if ([dict[@"type"] integerValue] == SZQuestionOpenQuestion) {
             NSString *str = dict[@"marked"];
             complete      = (str.length > 0) && complete;
-            [arrayM addObject:str.length ? dict[@"marked"] : @""];
+            [arrayM addObject:str.length ? str : @""];
         }
         else {
             NSArray *array = dict[@"marked"];
             complete       = ([array containsObject:@"YES"] || [array containsObject:@"yes"] || [array containsObject:@(1)] || [array containsObject:@"1"]) && complete;
-            [arrayM addObject:dict[@"marked"]];
+            [arrayM addObject:array];
         }
     }
     self.complete   = complete;

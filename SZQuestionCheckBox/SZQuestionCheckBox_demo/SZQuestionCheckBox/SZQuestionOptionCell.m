@@ -128,7 +128,9 @@
     
     NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
     dictM[@"marked"] = textField.text;
-    self.selectOptionButtonBack(self.indexPath, dictM.copy);
+    if (self.selectOptionButtonBack) {
+        self.selectOptionButtonBack(self.indexPath, dictM.copy);
+    }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

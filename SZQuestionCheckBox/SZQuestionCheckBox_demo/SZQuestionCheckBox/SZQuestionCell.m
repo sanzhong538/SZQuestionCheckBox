@@ -214,12 +214,23 @@
 }
 
 #pragma mark -  UITextFieldDelegate
-
+/*
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
     NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
     NSString *txtString = textField.text;
     dictM[@"marked"] = ([string isEqualToString:@""] && txtString.length > 0) ? [txtString substringToIndex:txtString.length - 1] : [txtString stringByAppendingString:string];
+    if (self.selectOptionBack) {
+        self.selectOptionBack(self.questionNum - 1, dictM.copy, NO);
+    }
+    return YES;
+}
+ */
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    
+    NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
+    dictM[@"marked"] = textField.text;
     if (self.selectOptionBack) {
         self.selectOptionBack(self.questionNum - 1, dictM.copy, NO);
     }
