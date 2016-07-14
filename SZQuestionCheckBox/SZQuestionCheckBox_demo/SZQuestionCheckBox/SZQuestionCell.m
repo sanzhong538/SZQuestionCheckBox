@@ -185,19 +185,22 @@
         rect.size.height = h;
     }
     textView.frame = rect;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        @try
-        {
-            if (self.selectOptionBack) {
-                self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+    
+    if (textView.isFirstResponder) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @try
+            {
+                if (self.selectOptionBack) {
+                    self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+                }
+                [textView becomeFirstResponder];
+                
+            }@catch (NSException * e) {
+                
+                [textView becomeFirstResponder];
             }
-            [textView becomeFirstResponder];
-
-        }@catch (NSException * e) {
-
-            [textView becomeFirstResponder];
-        }
-    });
+        });
+    }
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
