@@ -60,10 +60,12 @@
     }
     CGFloat titleWidth = width - self.configure.titleSideMargin * 2;
     CGFloat optionWidth = width - self.configure.optionSideMargin * 2 - self.configure.buttonSize - 5;
+    CGFloat fixedHeight = (self.configure.answerFrameFixedHeight && self.configure.answerFrameUseTextView == YES) ? self.configure.answerFrameFixedHeight : self.configure.oneLineHeight;
     self.configure.topDistance = self.questionNum == 1 ? self.configure.topDistance : 5;
     self.backgroundColor = self.configure.backColor;
+    NSString *title = self.configure.automaticAddLineNumber ? [NSString stringWithFormat:@"%zd、%@", self.questionNum, dict[@"title"]] : dict[@"title"];
     // 标题
-    CGFloat height = [SZQuestionItem heightForString:dict[@"title"]
+    CGFloat height = [SZQuestionItem heightForString:title
                                                width:titleWidth
                                             fontSize:self.configure.titleFont
                                        oneLineHeight:self.configure.oneLineHeight];
@@ -71,7 +73,7 @@
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.configure.titleSideMargin, self.configure.topDistance, titleWidth, height)];
     titleLabel.textColor = self.configure.titleTextColor;
     titleLabel.font = [UIFont systemFontOfSize:self.configure.titleFont];
-    titleLabel.text = self.configure.automaticAddLineNumber ? [NSString stringWithFormat:@"%zd、%@", self.questionNum, dict[@"title"]] : dict[@"title"];
+    titleLabel.text = title;
     titleLabel.numberOfLines = 0;
     [self addSubview:titleLabel];
     
@@ -92,7 +94,7 @@
         }
         else {
             
-            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, self.configure.oneLineHeight - 5)];
+            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(self.configure.optionSideMargin, height + self.configure.topDistance, width - self.configure.optionSideMargin * 2, fixedHeight - 5)];
             textView.font = [UIFont systemFontOfSize:self.configure.optionFont];
             textView.textColor = self.configure.optionTextColor;
             textView.showsVerticalScrollIndicator = NO;
@@ -171,7 +173,12 @@
     BOOL refresh = NO;
     NSMutableDictionary *dictM = [[NSMutableDictionary alloc] initWithDictionary:self.contentDict];
     dictM[@"marked"] = textView.text;
-    
+    if (self.configure.answerFrameUseTextView == YES && self.configure.answerFrameFixedHeight) {
+        if (self.selectOptionBack) {
+            self.selectOptionBack(self.questionNum - 1, dictM.copy, refresh);
+        }
+        return;
+    }
     CGFloat h = [SZQuestionItem heightForString:textView.text width:textView.frame.size.width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
     if (self.current_height > 0 && self.current_height != h) {
         refresh = YES;

@@ -103,8 +103,14 @@
 @property (nonatomic, assign) BOOL answerFrameUseTextView;
 
 /**
- *  主观题的回答框用 UITextView 时，限制高度
+ *  主观题的回答框用 UITextView 时，限制自适最高高度
  */
 @property (nonatomic, assign) CGFloat answerFrameLimitHeight;
+
+/**
+ *  主观题的回答框用 UITextView 时，限制固定高度
+ */
+@property (nonatomic, assign) CGFloat answerFrameFixedHeight;
+
 
 @end

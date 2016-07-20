@@ -48,6 +48,8 @@
     configure.titleTextColor = [UIColor blueColor];
     configure.optionTextColor = [UIColor purpleColor];
     configure.oneLineHeight = 35;
+    configure.answerFrameUseTextView = YES;
+    configure.answerFrameFixedHeight = 100;
     
     self.questionBox = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure];
     

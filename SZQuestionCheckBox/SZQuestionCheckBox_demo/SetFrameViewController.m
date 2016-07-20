@@ -71,7 +71,7 @@
     checkBox3.view.frame = CGRectMake(0, self.view.center.y, self.view.center.x, self.view.center.y);
     [self.view addSubview:checkBox3.view];
     
-    // 左下
+    // 右下
     SZConfigure *configure4 = [[SZConfigure alloc] init];
     configure4.titleFont = 13;
     configure4.optionFont = 12;
@@ -82,6 +82,7 @@
     configure4.multipleCheckedImage = @"dx_h@2x";
     configure4.multipleUncheckedImage = @"dx@2x";
     configure4.answerFrameUseTextView = YES;
+    configure4.answerFrameFixedHeight = 200;
     SZQuestionCheckBox *checkBox4 = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure4];
     checkBox4.tableView.bounces = NO;
     checkBox4.tableView.showsVerticalScrollIndicator = NO;

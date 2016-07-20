@@ -194,7 +194,8 @@
     
     if (self.chekBoxType == QuestionCheckBoxWithHeader) {
         NSDictionary *dict = self.sourceArray[section];
-        CGFloat title_height = [SZQuestionItem heightForString:dict[@"title"]
+        NSString *title = self.configure.automaticAddLineNumber ? [NSString stringWithFormat:@"%zd、%@", section + 1, dict[@"title"]] : dict[@"title"];
+        CGFloat title_height = [SZQuestionItem heightForString:title
                                                          width:self.titleWidth
                                                       fontSize:self.configure.titleFont
                                                  oneLineHeight:self.configure.oneLineHeight];
@@ -205,7 +206,7 @@
             lbl.font = [UIFont systemFontOfSize:self.configure.titleFont];
             lbl.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
             lbl.numberOfLines = 0;
-            lbl.text = self.configure.automaticAddLineNumber ? [NSString stringWithFormat:@"%zd、%@", section + 1, dict[@"title"]] : dict[@"title"];;
+            lbl.text = title;
             lbl;
         });
         [v addSubview:lbl];
@@ -265,7 +266,10 @@
             if ([dict[@"marked"] length] > 0) {
                 CGFloat answer_width = self.view.frame.size.width - self.configure.optionSideMargin * 2;
                 CGFloat answer_height = [SZQuestionItem heightForString:dict[@"marked"] width:answer_width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
-                if (self.configure.answerFrameLimitHeight && answer_height > self.configure.answerFrameLimitHeight) {
+                if (self.configure.answerFrameFixedHeight && self.configure.answerFrameUseTextView == YES) {
+                    return title_height + self.configure.answerFrameFixedHeight + 10 + topDistance;
+                }
+                if (self.configure.answerFrameLimitHeight && answer_height > self.configure.answerFrameLimitHeight && self.configure.answerFrameUseTextView == YES) {
                     return title_height + self.configure.answerFrameLimitHeight + 10 + topDistance;
                 }
                 return title_height + answer_height + 10 + topDistance;
