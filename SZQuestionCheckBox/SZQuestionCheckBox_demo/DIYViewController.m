@@ -49,7 +49,7 @@
     configure.optionTextColor = [UIColor purpleColor];
     configure.oneLineHeight = 35;
     configure.answerFrameUseTextView = YES;
-    configure.answerFrameFixedHeight = 100;
+    configure.answerFrameFixedHeight = 60;
     
     self.questionBox = [[SZQuestionCheckBox alloc] initWithItem:self.item andConfigure:configure];
     

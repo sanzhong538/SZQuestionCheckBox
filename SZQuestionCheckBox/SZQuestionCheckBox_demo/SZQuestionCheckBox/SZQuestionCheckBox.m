@@ -263,12 +263,12 @@
                                                              width:self.titleWidth
                                                           fontSize:self.configure.titleFont
                                                      oneLineHeight:self.configure.oneLineHeight];
+            if (self.configure.answerFrameFixedHeight && self.configure.answerFrameUseTextView == YES) {
+                return title_height + self.configure.answerFrameFixedHeight + 10 + topDistance;
+            }
             if ([dict[@"marked"] length] > 0) {
                 CGFloat answer_width = self.view.frame.size.width - self.configure.optionSideMargin * 2;
                 CGFloat answer_height = [SZQuestionItem heightForString:dict[@"marked"] width:answer_width - 10 fontSize:self.configure.optionFont oneLineHeight:self.configure.oneLineHeight];
-                if (self.configure.answerFrameFixedHeight && self.configure.answerFrameUseTextView == YES) {
-                    return title_height + self.configure.answerFrameFixedHeight + 10 + topDistance;
-                }
                 if (self.configure.answerFrameLimitHeight && answer_height > self.configure.answerFrameLimitHeight && self.configure.answerFrameUseTextView == YES) {
                     return title_height + self.configure.answerFrameLimitHeight + 10 + topDistance;
                 }
